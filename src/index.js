@@ -11,8 +11,6 @@ Sentry.init({
   release: process.env.REACT_APP_SENTRY_RELEASE
 });
 
-console.log('rel', process.env.REACT_APP_SENTRY_RELEASE)
-
 ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

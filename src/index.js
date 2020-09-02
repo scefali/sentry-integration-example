@@ -11,6 +11,8 @@ Sentry.init({
   release: process.env.REACT_APP_SENTRY_RELEASE
 });
 
+Sentry.captureException(new Error('lol'))
+
 console.log('rel', process.env.REACT_APP_SENTRY_RELEASE)
 
 ReactDOM.render(<App />, document.getElementById('root'));

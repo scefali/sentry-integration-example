@@ -23,6 +23,7 @@ const staticPage = (req, res) => {
 
 const handleWebhook = async (req, res) => {
   try {
+    console.log("handleWebhook", req.body)
     const { action, data } = req.body;
     const { issue } = data;
     if (action === 'deleted') {
@@ -41,7 +42,7 @@ const handleWebhook = async (req, res) => {
         .get('userPtr')
         .save({ oauthComplete: false }, { useMasterKey: true });
     } else if (issue) {
-      console.log('\n\n got issue', JSON.stringify(issue), '\n\n');
+      // console.log('\n\n got issue', JSON.stringify(issue), '\n\n');
       const issueParams = _.omit(issue, ['id']);
       issueParams.sentryId = issue.id;
       let sentryIssue = await issues.findSentryIssue(issue.id);

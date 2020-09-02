@@ -105,7 +105,7 @@ class Auth extends React.Component {
               placeholder='Email'
               aria-label='Email'
               aria-describedby='basic-addon1'
-              onChange={e => this.inputChange('email', e)}
+              onChange={e => this.props.inputChange('email', e)}
             />
           </InputGroup>
           <InputGroup className='mb-3'>
